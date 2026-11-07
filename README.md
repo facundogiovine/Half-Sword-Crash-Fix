@@ -1,4 +1,4 @@
-# Half Sword Paint Crash Fix
+# Half-Sword Crash Fix
 
 Fixes the Half Sword crash that happens when you hit an enemy hard
 (`EXCEPTION_ACCESS_VIOLATION` in the *Runtime Vertex Paint and Detection Plugin*).
