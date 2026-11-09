@@ -33,15 +33,3 @@ the exact call stack, and backs out of it:
 - **Game thread:** the result callback is skipped, as if the pass had no result.
 
 It logs to `%LOCALAPPDATA%\HalfSwordUE5\Saved\Logs\PaintFix.log`.
-
-## For the developers
-
-A real fix would keep the mesh data alive for as long as a paint task uses it. For
-example, copy the needed vertex data before starting the task, hold a reference to the
-render data during the task, or cancel running tasks when the mesh changes and check
-in the result callback that it is still the same mesh.
-
-## Build
-
-Needs Visual Studio with *Desktop development with C++*. Run `build.bat` to build
-`out\XINPUT1_4.dll`, or `build.bat test` to also run the tests.
