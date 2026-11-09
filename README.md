@@ -9,7 +9,7 @@ any other build it switches itself off.
 
 ## Install
 
-1. Download `HalfSword-PaintCrashFix.zip` from [Releases](../../releases).
+1. Download `Half-Sword-Crash-Fix.zip` from [Releases](../../releases).
 2. Open your Half Sword folder (Steam > right-click Half Sword > Manage > Browse local files).
 3. Drop the contents of the zip in there.
 4. Play.
