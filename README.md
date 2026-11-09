@@ -1,11 +1,6 @@
 # Half-Sword Crash Fix
 
 Fixes the Half Sword crash that happens when you hit an enemy hard
-(`EXCEPTION_ACCESS_VIOLATION` in the *Runtime Vertex Paint and Detection Plugin*).
-Blood and wound painting stay exactly as they are.
-
-Fan-made, not from the Half Sword developers. Only for game build **CL-2705**; on
-any other build it switches itself off.
 
 ## Install
 
@@ -15,12 +10,6 @@ any other build it switches itself off.
 4. Play.
 
 To uninstall, delete `HalfswordUE5\Binaries\Win64\XINPUT1_4.dll`.
-
-## The bug
-
-The plugin paints blood on background threads, reading the mesh's CPU vertex data
-(positions, skin weights, tangents, UVs). Sometimes the game frees that data while a
-paint task is still using it, and the next read crashes the game. 
 
 ## The fix
 
