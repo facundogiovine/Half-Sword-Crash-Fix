@@ -20,9 +20,7 @@ To uninstall, delete `HalfswordUE5\Binaries\Win64\XINPUT1_4.dll`.
 
 The plugin paints blood on background threads, reading the mesh's CPU vertex data
 (positions, skin weights, tangents, UVs). Sometimes the game frees that data while a
-paint task is still using it, and the next read crashes the game. This happens mostly
-on the plugin's paint threads, and rarely on the game thread, in the callback that
-applies a finished paint pass.
+paint task is still using it, and the next read crashes the game. 
 
 ## The fix
 
@@ -33,10 +31,6 @@ the exact call stack, and backs out of it:
 - **Paint thread:** the per-vertex check returns `false`, the plugin's own "abort this
   paint pass" path.
 - **Game thread:** the result callback is skipped, as if the pass had no result.
-
-The cost is that a hit sometimes leaves no new blood. Any other crash still crashes
-normally. In testing it caught 267 of these crashes over two sessions with no game
-closing.
 
 It logs to `%LOCALAPPDATA%\HalfSwordUE5\Saved\Logs\PaintFix.log`.
 
